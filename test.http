@@ -1,0 +1,56 @@
+GET http://localhost:3000/todos/?status=TO%20DO
+###
+GET http://localhost:3000/todos/?priority=HIGH
+
+###
+GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+###
+GET http://localhost:3000/todos/?search_q=Play
+
+###
+GET http://localhost:3000/todos/1/
+
+### API 3
+POST http://localhost:3000/todos/
+Content-Type: application/json
+
+{
+    "id":15,
+    "todo":"play kabaddi",
+    "priority":"LOW",
+    "status":"DONE"
+}
+###
+
+PUT http://localhost:3000/todos/15/
+Content-Type: application/json
+
+{
+    "id":15,
+    "todo":"play kabaddi",
+    "priority":"LOW",
+    "status":"DONE"
+}
+###
+PUT http://localhost:3000/todos/15/
+Content-Type: application/json
+
+{
+    "status":"DONE"
+}
+###
+PUT http://localhost:3000/todos/15/
+Content-Type: application/json
+
+{
+    "priority":"HIGH"
+}
+###
+PUT http://localhost:3000/todos/15/
+Content-Type: application/json
+
+{
+    "todo":"Some Task"
+}
+###
+DELETE http://localhost:3000/todos/15/
